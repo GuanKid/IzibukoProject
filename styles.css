@@ -1,0 +1,296 @@
+/* Basic Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+  margin: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #007acc;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.9);
+  padding: 10px 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.navbar .toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #007acc;
+}
+
+.nav-links li a i {
+  margin-right: 8px;
+}
+
+/* Full-Screen Sections */
+main {
+  padding-top: 60px; /* To account for fixed navbar */
+}
+
+.grid-item {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.grid-item:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.grid-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Text Styling */
+h2 {
+  color: #007acc;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  color: #333;
+  font-size: 1.3em;
+  margin: 10px 0 5px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+ul li::before {
+  content: '\2022';
+  color: #007acc;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.image-placeholder, .team-photo {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  background-color: #e0e0e0;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.image-placeholder:hover, .team-photo:hover {
+  background-color: #d0d0d0;
+}
+
+.team-member {
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Icon Styling */
+.fas {
+  color: #007acc;
+  margin-bottom: 15px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #007acc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 20px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .grid-item {
+    padding: 60px 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+}
+
+
+/* Contact Section Styles */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#contact-form {
+  flex: 1;
+  margin-right: 20px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#contact-form button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact-form button:hover {
+  background-color: #005fa3;
+}
+
+#map {
+  flex: 1;
+  height: 300px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  #contact-form {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+
+.nav-links li a.active {
+  color: #007acc;
+  font-weight: bold;
+}
+
+.success-message {
+  color: #4CAF50;
+  margin-top: 10px;
+}
